@@ -56,6 +56,62 @@
               "api-reference/introduction"
             ]
           },
+            {
+                "group": "Org Structure: Organization Group",
+                "pages": [
+                    "api-documentation/organization-group/create-organization-group",
+                    "api-documentation/organization-group/update-organization-group",
+                    "api-documentation/organization-group/get-organization-group",
+                    "api-documentation/organization-group/activate-organization-group",
+                    "api-documentation/organization-group/deactivate-organization-group"
+                ]
+            },
+            {
+                "group": "Org Structure: Organization",
+                "pages": [
+                    "api-documentation/organization/create-organization",
+                    "api-documentation/organization/update-organization",
+                    "api-documentation/organization/get-organization",
+                    "api-documentation/organization/activate-organization",
+                    "api-documentation/organization/deactivate-organization"
+                ]
+            },
+            {
+                "group": "Org Structure: Provider",
+                "pages": [
+                    "api-documentation/provider/create-provider",
+                    "api-documentation/provider/update-provider",
+                    "api-documentation/provider/get-provider",
+                    "api-documentation/provider/activate-provider",
+                    "api-documentation/provider/deactivate-provider"
+                ]
+            },
+            {
+                "group": "Case (Patient Care Plan)",
+                "pages": [
+                    "api-documentation/case/create-case",
+                    "api-documentation/case/get-case",
+                    "api-documentation/case/cancel-case",
+                    "api-documentation/case/close-case",
+                    "api-documentation/case/complete-case"
+                ]
+            },
+            {
+                "group": "FAQ (Customer Knowledgebase)",
+                "pages": [
+                    "api-documentation/faq/upload-faq",
+                    "api-documentation/faq/get-faq",
+                    "api-documentation/faq/associate-index"
+                ]
+            },
+            {
+                "group": "Chat Interactions via Web",
+                "pages": [
+                    "api-documentation/chat-interaction/get-chat-interaction",
+                    "api-documentation/chat-interaction/send-chat-interaction",
+                    "api-documentation/chat-interaction/terminate-chat-session"
+                ]
+            },
           {
             "group": "Endpoint examples",
             "pages": [

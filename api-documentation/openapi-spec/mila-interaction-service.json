@@ -1,0 +1,2007 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "Mila Health, MIM API",
+        "description": "Mila Health MIM API OpenAPI schema",
+        "version": "2.0.1"
+    },
+    "paths": {
+        "/SMS/VerifyNumber": {
+            "post": {
+                "tags": [
+                    "sms"
+                ],
+                "summary": "Verify Phone Number",
+                "operationId": "verify_phone_number_SMS_VerifyNumber_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/VerifyPhoneNumberRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/VerifyPhoneNumberResponse"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/SMS/ConversationEvent/optedout/{interaction_id}": {
+            "post": {
+                "tags": [
+                    "sms"
+                ],
+                "summary": "Response Callback Optedout",
+                "operationId": "response_callback_optedout_SMS_ConversationEvent_optedout__interaction_id__post",
+                "parameters": [
+                    {
+                        "name": "interaction_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Interaction Id"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/SMS/ConversationEvent/ended/{interaction_id}": {
+            "post": {
+                "tags": [
+                    "sms"
+                ],
+                "summary": "Response Callback Ended",
+                "operationId": "response_callback_ended_SMS_ConversationEvent_ended__interaction_id__post",
+                "parameters": [
+                    {
+                        "name": "interaction_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Interaction Id"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/SMS/ConversationEvent/{interaction_id}": {
+            "post": {
+                "tags": [
+                    "sms"
+                ],
+                "summary": "Response Callback",
+                "operationId": "response_callback_SMS_ConversationEvent__interaction_id__post",
+                "parameters": [
+                    {
+                        "name": "interaction_id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Interaction Id"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/health": {
+            "get": {
+                "summary": "Health Check",
+                "description": "Health check endpoint.\n\nReturns:\n    dict: A dictionary containing the status of the service.",
+                "operationId": "health_check_health_get",
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/CreateInteraction": {
+            "post": {
+                "tags": [
+                    "interaction-controller"
+                ],
+                "summary": "Create Interaction",
+                "description": "Create an interaction based on the provided request.\n\nArgs:\n    request (CreateInteractionRequest): The request object containing the details of the interaction.\n\nReturns:\n    CreateInteractionStatus: The status of the created interaction.\n\nRaises:\n    HTTPException: If any error occurs during the creation of the interaction.",
+                "operationId": "createInteraction",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateInteractionRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CreateInteractionResponse"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/GetInteractionResponse": {
+            "get": {
+                "tags": [
+                    "interaction-controller"
+                ],
+                "summary": "Get Interaction Response",
+                "description": "Retrieve the interaction response from the database.\n\nParameters:\ninteractionId (str): The ID of the interaction.\n\nReturns:\nInteractionResponse: The response of the interaction.\n\nRaises:\nHTTPException: If there is an error retrieving the interaction response from the database.",
+                "operationId": "getInteractionResponse",
+                "parameters": [
+                    {
+                        "name": "interactionId",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Interactionid"
+                        }
+                    },
+                    {
+                        "name": "retryTasks",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": false,
+                            "title": "Retrytasks"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/InteractionResponse"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/TerminateInteraction": {
+            "put": {
+                "tags": [
+                    "interaction-controller"
+                ],
+                "summary": "Terminate Interaction",
+                "description": "Terminate the interaction.\n\nParameters:\ninteractionId (str): The ID of the interaction.\n\nReturns:\nInteractionResponse: The response of the interaction after termination.\n\nRaises:\nHTTPException: If there is an error retrieving the interaction response from the database.",
+                "operationId": "terminateInteraction",
+                "parameters": [
+                    {
+                        "name": "interactionId",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "title": "Interactionid"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/InteractionResponse"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ContinuedChatInteraction": {
+            "post": {
+                "summary": "Chat User Response",
+                "description": "Handle the user response received during a chat interaction.\n\nArgs:\n    request (Request): The incoming request object.\n\nReturns:\n    Response: The response object containing the interaction continuation response.\n\nRaises:\n    HTTPException: If there is an error during the interaction continuation process.",
+                "operationId": "chat_user_response_ContinuedChatInteraction_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/ContinuedChatInteractionRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ContinuedChatInteractionResponse"
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AdminGroup": {
+                "properties": {
+                    "adminGroupId": {
+                        "type": "string",
+                        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+                        "title": "Admingroupid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "title": "Name"
+                    },
+                    "address": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Address"
+                    },
+                    "phoneNumber": {
+                        "type": "string",
+                        "title": "Phonenumber"
+                    },
+                    "twilioSubAccountIds": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Twiliosubaccountids",
+                        "default": []
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "adminGroupId",
+                    "name",
+                    "phoneNumber"
+                ],
+                "title": "AdminGroup"
+            },
+            "Branch": {
+                "properties": {
+                    "description": {
+                        "type": "string",
+                        "title": "Description",
+                        "default": ""
+                    },
+                    "message": {
+                        "type": "string",
+                        "title": "Message",
+                        "default": ""
+                    },
+                    "state": {
+                        "type": "string",
+                        "title": "State",
+                        "default": "DEFAULT"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "message",
+                    "state"
+                ],
+                "title": "Branch"
+            },
+            "Condition": {
+                "properties": {
+                    "conditionId": {
+                        "type": "string",
+                        "title": "Conditionid"
+                    },
+                    "operator": {
+                        "$ref": "#/components/schemas/OperatorType"
+                    },
+                    "values": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "title": "Values"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "conditionId",
+                    "operator",
+                    "values"
+                ],
+                "title": "Condition"
+            },
+            "ContinuedChatInteractionRequest": {
+                "properties": {
+                    "interactionId": {
+                        "type": "string",
+                        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+                        "title": "Interactionid"
+                    },
+                    "userResponse": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Userresponse"
+                    },
+                    "iterator": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Iterator"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "interactionId"
+                ],
+                "title": "ContinuedChatInteractionRequest"
+            },
+            "ContinuedChatInteractionResponse": {
+                "properties": {
+                    "systemResponse": {
+                        "type": "string",
+                        "title": "Systemresponse"
+                    },
+                    "message_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Message Id"
+                    },
+                    "interactionId": {
+                        "type": "string",
+                        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+                        "title": "Interactionid"
+                    },
+                    "iterator": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Iterator"
+                    },
+                    "conversation_end": {
+                        "anyOf": [
+                            {
+                                "type": "boolean"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Conversation End",
+                        "default": false
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "systemResponse",
+                    "message_id",
+                    "interactionId",
+                    "iterator"
+                ],
+                "title": "ContinuedChatInteractionResponse"
+            },
+            "Conversation-Input": {
+                "properties": {
+                    "messages": {
+                        "items": {
+                            "$ref": "#/components/schemas/MessageLog"
+                        },
+                        "type": "array",
+                        "title": "Messages"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "messages"
+                ],
+                "title": "Conversation"
+            },
+            "CreateInteractionRequest": {
+                "properties": {
+                    "channel": {
+                        "$ref": "#/components/schemas/InteractionChannel"
+                    },
+                    "interactionType": {
+                        "$ref": "#/components/schemas/InteractionType"
+                    },
+                    "initiationType": {
+                        "$ref": "#/components/schemas/InitiationType"
+                    },
+                    "preferredLanguage": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Preferredlanguage"
+                    },
+                    "patient": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/components/schemas/Patient"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "interactionContext": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Interactioncontext"
+                    },
+                    "taskGraphs": {
+                        "items": {
+                            "$ref": "#/components/schemas/TaskGraph"
+                        },
+                        "type": "array",
+                        "title": "Taskgraphs"
+                    },
+                    "interactionId": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Interactionid"
+                    },
+                    "caseId": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Caseid"
+                    },
+                    "outcomePlanInstanceId": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Outcomeplaninstanceid"
+                    },
+                    "parameters": {
+                        "additionalProperties": true,
+                        "type": "object",
+                        "title": "Parameters",
+                        "default": {}
+                    },
+                    "conversationHistory": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "$ref": "#/components/schemas/Conversation-Input"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Conversationhistory"
+                    },
+                    "organization": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/components/schemas/Organization"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "interactionSequence": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Interactionsequence",
+                        "default": 0
+                    },
+                    "summarizations": {
+                        "anyOf": [
+                            {
+                                "additionalProperties": {
+                                    "items": {
+                                        "$ref": "#/components/schemas/Summarization"
+                                    },
+                                    "type": "array"
+                                },
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Summarizations",
+                        "default": {
+                        }
+                    },
+                    "metadata": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/components/schemas/InteractionMetadata"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "channel",
+                    "taskGraphs"
+                ],
+                "title": "CreateInteractionRequest"
+            },
+            "CreateInteractionResponse": {
+                "properties": {
+                    "interactionId": {
+                        "type": "string",
+                        "title": "Interactionid"
+                    },
+                    "status": {
+                        "$ref": "#/components/schemas/InteractionStatus"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "interactionId",
+                    "status"
+                ],
+                "title": "CreateInteractionResponse"
+            },
+            "Dialog": {
+                "properties": {
+                    "type": {
+                        "$ref": "#/components/schemas/DialogType"
+                    },
+                    "question": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Question"
+                    },
+                    "message": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Message"
+                    },
+                    "state": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "State"
+                    },
+                    "options": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Options",
+                        "default": []
+                    },
+                    "conditions": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "$ref": "#/components/schemas/Condition"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Conditions"
+                    },
+                    "branches": {
+                        "anyOf": [
+                            {
+                                "additionalProperties": {
+                                    "$ref": "#/components/schemas/Branch"
+                                },
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Branches"
+                    },
+                    "slotKey": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Slotkey"
+                    },
+                    "slotMatchingEntity": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Slotmatchingentity"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "type"
+                ],
+                "title": "Dialog"
+            },
+            "DialogType": {
+                "type": "string",
+                "enum": [
+                    "DECLARATIVE_STATEMENT",
+                    "AFFIRMATIVE_NEGATIVE_QUESTION",
+                    "SLOT_FILL_IN_QUESTION",
+                    "SLOT_MATCHING_QUESTION",
+                    "RANGE_QUESTION",
+                    "SINGLE_OPTION_SELECTION_QUESTION",
+                    "MULTI_OPTION_SELECTION_QUESTION"
+                ],
+                "title": "DialogType"
+            },
+            "Gender": {
+                "type": "string",
+                "enum": [
+                    "MALE",
+                    "FEMALE",
+                    "NON_BINARY",
+                    "OTHER",
+                    "PREFER_NOT_TO_SAY"
+                ],
+                "title": "Gender"
+            },
+            "HTTPValidationError": {
+                "properties": {
+                    "detail": {
+                        "items": {
+                            "$ref": "#/components/schemas/ValidationError"
+                        },
+                        "type": "array",
+                        "title": "Detail"
+                    }
+                },
+                "type": "object",
+                "title": "HTTPValidationError"
+            },
+            "InboundVoiceAgentPhoneNumber": {
+                "properties": {
+                    "phoneNumber": {
+                        "type": "string",
+                        "title": "Phonenumber"
+                    },
+                    "twilioSubAccountId": {
+                        "type": "string",
+                        "title": "Twiliosubaccountid"
+                    },
+                    "outcomePlanType": {
+                        "type": "string",
+                        "title": "Outcomeplantype"
+                    },
+                    "outcomePlanId": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/components/schemas/VersionedOutcomePlanId"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "phoneNumber",
+                    "twilioSubAccountId",
+                    "outcomePlanType"
+                ],
+                "title": "InboundVoiceAgentPhoneNumber"
+            },
+            "InteractionChannel": {
+                "type": "string",
+                "enum": [
+                    "VOICE",
+                    "SMS",
+                    "CHAT"
+                ],
+                "title": "InteractionChannel"
+            },
+            "InteractionEvaluation": {
+                "properties": {
+                    "rating": {
+                        "type": "integer",
+                        "title": "Rating"
+                    },
+                    "reason": {
+                        "type": "string",
+                        "title": "Reason"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "rating",
+                    "reason"
+                ],
+                "title": "InteractionEvaluation"
+            },
+            "InteractionMetadata": {
+                "properties": {
+                    "conversation_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Conversation Id"
+                    },
+                    "twilio_call_sid": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Twilio Call Sid"
+                    }
+                },
+                "type": "object",
+                "title": "InteractionMetadata"
+            },
+            "InteractionResponse": {
+                "properties": {
+                    "interactionId": {
+                        "type": "string",
+                        "title": "Interactionid"
+                    },
+                    "outcomePlanInstanceId": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Outcomeplaninstanceid"
+                    },
+                    "interactionStatus": {
+                        "$ref": "#/components/schemas/InteractionStatus"
+                    },
+                    "interactionStatusReason": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/components/schemas/InteractionStatusReason"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "default": "NONE"
+                    },
+                    "interactionChannel": {
+                        "$ref": "#/components/schemas/InteractionChannel"
+                    },
+                    "interactionType": {
+                        "$ref": "#/components/schemas/InteractionType"
+                    },
+                    "taskGraphResponses": {
+                        "items": {
+                            "$ref": "#/components/schemas/TaskGraphResponse"
+                        },
+                        "type": "array",
+                        "title": "Taskgraphresponses"
+                    },
+                    "summarizations": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "$ref": "#/components/schemas/Summarization"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Summarizations",
+                        "default": []
+                    },
+                    "metadata": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/components/schemas/InteractionMetadata"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "evaluation": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/components/schemas/InteractionEvaluation"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "interactionId",
+                    "interactionStatus",
+                    "interactionChannel",
+                    "taskGraphResponses"
+                ],
+                "title": "InteractionResponse"
+            },
+            "InteractionStatus": {
+                "type": "string",
+                "enum": [
+                    "COMPLETED",
+                    "IN_PROGRESS",
+                    "SUSPENDED",
+                    "FAILED",
+                    "TERMINATED"
+                ],
+                "title": "InteractionStatus"
+            },
+            "InteractionStatusReason": {
+                "type": "string",
+                "enum": [
+                    "NONE",
+                    "PATIENT_OPT_OUT",
+                    "FAILURE_PATIENT_OPT_OUT"
+                ],
+                "title": "InteractionStatusReason"
+            },
+            "InteractionType": {
+                "type": "string",
+                "enum": [
+                    "ALWAYS_ON_INTERACTION",
+                    "ON_DEMAND_INTERACTION"
+                ],
+                "title": "InteractionType"
+            },
+            "InitiationType": {
+                "type": "string",
+                "enum": [
+                    "INBOUND",
+                    "OUTBOUND"
+                ]
+            },
+            "MessageLog": {
+                "properties": {
+                    "message_id": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Message Id"
+                    },
+                    "timestamp": {
+                        "type": "string",
+                        "format": "date-time",
+                        "title": "Timestamp"
+                    },
+                    "message": {
+                        "type": "string",
+                        "title": "Message"
+                    },
+                    "sender": {
+                        "$ref": "#/components/schemas/MessageSender"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "timestamp",
+                    "message",
+                    "sender"
+                ],
+                "title": "MessageLog"
+            },
+            "MessageSender": {
+                "type": "string",
+                "enum": [
+                    "PATIENT",
+                    "SYSTEM",
+                    "PROVIDER"
+                ],
+                "title": "MessageSender"
+            },
+            "OperatorType": {
+                "type": "string",
+                "enum": [
+                    "CLOSE_OPEN_RANGE",
+                    "OPEN_CLOSE_RANGE",
+                    "CLOSED_RANGE",
+                    "OPEN_RANGE",
+                    "EQUALS",
+                    "NOT_EQUALS",
+                    "CONTAINS_ANY",
+                    "CONTAINS_ALL",
+                    "NOT_CONTAINS"
+                ],
+                "title": "OperatorType"
+            },
+            "Organization": {
+                "properties": {
+                    "organizationId": {
+                        "type": "string",
+                        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+                        "title": "Organizationid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "title": "Name"
+                    },
+                    "address": {
+                        "type": "string",
+                        "title": "Address"
+                    },
+                    "phoneNumber": {
+                        "type": "string",
+                        "title": "Phonenumber"
+                    },
+                    "milaPhoneNumber": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Milaphonenumber"
+                    },
+                    "transferPhoneNumber": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/components/schemas/PhoneNumberWithExtension"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Transferphonenumber"
+                    },
+                    "milaPhoneNumberTwilioSubAccountId": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Milaphonenumbertwiliosubaccountid"
+                    },
+                    "inboundVoiceAgentPhoneNumbers": {
+                        "anyOf": [
+                            {
+                                "additionalProperties": {
+                                    "$ref": "#/components/schemas/InboundVoiceAgentPhoneNumber"
+                                },
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Inboundvoiceagentphonenumbers",
+                        "default": {}
+                    },
+                    "timeZone": {
+                        "type": "string",
+                        "title": "Timezone"
+                    },
+                    "preferredHours": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Preferredhours"
+                    },
+                    "officeHours": {
+                        "type": "string",
+                        "title": "officeHours"
+                    },
+                    "externalId": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Externalid"
+                    },
+                    "organizationGroup": {
+                        "$ref": "#/components/schemas/OrganizationGroup"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "organizationId",
+                    "name",
+                    "address",
+                    "phoneNumber",
+                    "timeZone",
+                    "preferredHours",
+                    "officeHours",
+                    "organizationGroup"
+                ],
+                "title": "Organization"
+            },
+            "OrganizationGroup": {
+                "properties": {
+                    "organizationGroupId": {
+                        "type": "string",
+                        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+                        "title": "Organizationgroupid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "title": "Name"
+                    },
+                    "assistantName": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Assistantname"
+                    },
+                    "address": {
+                        "type": "string",
+                        "title": "Address"
+                    },
+                    "phoneNumber": {
+                        "type": "string",
+                        "title": "Phonenumber"
+                    },
+                    "milaPhoneNumber": {
+                        "type": "string",
+                        "title": "Milaphonenumber"
+                    },
+                    "transferPhoneNumber": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/components/schemas/PhoneNumberWithExtension"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Transferphonenumber"
+                    },
+                    "milaPhoneNumberTwilioSubAccountId": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Milaphonenumbertwiliosubaccountid"
+                    },
+                    "inboundVoiceAgentPhoneNumbers": {
+                        "anyOf": [
+                            {
+                                "additionalProperties": {
+                                    "$ref": "#/components/schemas/InboundVoiceAgentPhoneNumber"
+                                },
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Inboundvoiceagentphonenumbers",
+                        "default": {}
+                    },
+                    "externalId": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Externalid"
+                    },
+                    "adminGroup": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/components/schemas/AdminGroup"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "organizationGroupId",
+                    "name",
+                    "address",
+                    "phoneNumber",
+                    "milaPhoneNumber"
+                ],
+                "title": "OrganizationGroup"
+            },
+            "Patient": {
+                "properties": {
+                    "patientId": {
+                        "type": "string",
+                        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+                        "title": "Patientid"
+                    },
+                    "firstName": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9.\\s\\-']+$",
+                        "title": "Firstname"
+                    },
+                    "lastName": {
+                        "type": "string",
+                        "pattern": "^[A-Za-z0-9.\\s\\-']+$",
+                        "title": "Lastname"
+                    },
+                    "dob": {
+                        "type": "string",
+                        "pattern": "\\d{2}-\\d{2}-\\d{4}",
+                        "title": "Dob"
+                    },
+                    "gender": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/components/schemas/Gender"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Gender"
+                    },
+                    "phoneNumber": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "pattern": "\\+\\d{1,3}-?\\d{3}-?\\d{3}-?\\d{4}|\\+\\d{12}"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Phonenumber"
+                    },
+                    "mobilePhoneNumber": {
+                        "type": "string",
+                        "pattern": "\\+\\d{1,3}-?\\d{3}-?\\d{3}-?\\d{4}|\\+\\d{12}",
+                        "title": "Mobilephonenumber"
+                    },
+                    "postalCode": {
+                        "anyOf": [
+                            {
+                                "type": "string",
+                                "pattern": "^\\d{5}$"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Postalcode"
+                    },
+                    "externalId": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Externalid"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "patientId",
+                    "firstName",
+                    "lastName",
+                    "dob",
+                    "gender",
+                    "phoneNumber",
+                    "mobilePhoneNumber",
+                    "postalCode"
+                ],
+                "title": "Patient"
+            },
+            "PhoneNumberStatus": {
+                "type": "string",
+                "enum": [
+                    "valid",
+                    "invalid",
+                    "unable_to_verify"
+                ],
+                "title": "PhoneNumberStatus"
+            },
+            "PhoneNumberWithExtension": {
+                "properties": {
+                    "phoneNumber": {
+                        "type": "string",
+                        "title": "Phonenumber"
+                    },
+                    "extension": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Extension"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "phoneNumber"
+                ],
+                "title": "PhoneNumberWithExtension"
+            },
+            "RetryStrategy": {
+                "properties": {
+                    "type": {
+                        "$ref": "#/components/schemas/RetryStrategyType"
+                    },
+                    "maxRetries": {
+                        "type": "integer",
+                        "title": "Maxretries"
+                    },
+                    "delay": {
+                        "type": "string",
+                        "format": "duration",
+                        "title": "Delay"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "type",
+                    "maxRetries",
+                    "delay"
+                ],
+                "title": "RetryStrategy"
+            },
+            "RetryStrategyType": {
+                "type": "string",
+                "enum": [
+                    "FIXED_DELAY"
+                ],
+                "title": "RetryStrategyType"
+            },
+            "Slot": {
+                "properties": {
+                    "type": {
+                        "$ref": "#/components/schemas/SlotType"
+                    },
+                    "key": {
+                        "type": "string",
+                        "title": "Key"
+                    },
+                    "value": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Value"
+                    },
+                    "expected": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Expected"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "type",
+                    "key"
+                ],
+                "title": "Slot"
+            },
+            "SlotType": {
+                "type": "string",
+                "enum": [
+                    "FreeText",
+                    "Number",
+                    "Date",
+                    "Time"
+                ],
+                "title": "SlotType"
+            },
+            "Summarization": {
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "title": "Id"
+                    },
+                    "timestamp": {
+                        "type": "string",
+                        "format": "date-time",
+                        "title": "Timestamp"
+                    },
+                    "summary": {
+                        "type": "string",
+                        "title": "Summary"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id",
+                    "timestamp",
+                    "summary"
+                ],
+                "title": "Summarization"
+            },
+            "SystemFunction": {
+                "type": "string",
+                "enum": [
+                    "HTTP_POST",
+                    "SEND_SMS"
+                ],
+                "title": "SystemFunction"
+            },
+            "Task": {
+                "properties": {
+                    "taskInstanceId": {
+                        "type": "string",
+                        "title": "Taskinstanceid"
+                    },
+                    "name": {
+                        "type": "string",
+                        "title": "Name"
+                    },
+                    "description": {
+                        "type": "string",
+                        "title": "Description"
+                    },
+                    "type": {
+                        "$ref": "#/components/schemas/TaskType"
+                    },
+                    "branches": {
+                        "additionalProperties": {
+                            "type": "string"
+                        },
+                        "type": "object",
+                        "title": "Branches",
+                        "default": {}
+                    },
+                    "parameters": {
+                        "additionalProperties": true,
+                        "type": "object",
+                        "title": "Parameters",
+                        "default": {}
+                    },
+                    "interactionContext": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Interactioncontext"
+                    },
+                    "functionName": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/components/schemas/SystemFunction"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "functionParameters": {
+                        "anyOf": [
+                            {
+                                "type": "object"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Functionparameters"
+                    },
+                    "dialog": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/components/schemas/Dialog"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "retryStrategy": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/components/schemas/RetryStrategy"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ]
+                    },
+                    "retrievalQuestions": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Retrievalquestions"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "taskInstanceId",
+                    "name",
+                    "description",
+                    "type"
+                ],
+                "title": "Task"
+            },
+            "TaskGraph": {
+                "properties": {
+                    "taskGraphInstanceId": {
+                        "type": "string",
+                        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+                        "title": "Taskgraphinstanceid"
+                    },
+                    "startTaskId": {
+                        "type": "string",
+                        "title": "Starttaskid"
+                    },
+                    "tasks": {
+                        "items": {
+                            "$ref": "#/components/schemas/Task"
+                        },
+                        "type": "array",
+                        "title": "Tasks"
+                    },
+                    "summarizationId": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Summarizationid"
+                    },
+                    "isLastRetryAttempt": {
+                        "anyOf": [
+                            {
+                                "type": "boolean"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Islastretryattempt",
+                        "default": false
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "taskGraphInstanceId",
+                    "startTaskId",
+                    "tasks"
+                ],
+                "title": "TaskGraph"
+            },
+            "TaskGraphResponse": {
+                "properties": {
+                    "taskGraphInstanceId": {
+                        "type": "string",
+                        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+                        "title": "Taskgraphinstanceid"
+                    },
+                    "states": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array",
+                        "title": "States",
+                        "default": []
+                    },
+                    "taskResponses": {
+                        "items": {
+                            "$ref": "#/components/schemas/TaskResponse"
+                        },
+                        "type": "array",
+                        "title": "Taskresponses",
+                        "default": []
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "taskGraphInstanceId"
+                ],
+                "title": "TaskGraphResponse"
+            },
+            "TaskResponse": {
+                "properties": {
+                    "taskInstanceId": {
+                        "type": "string",
+                        "title": "Taskinstanceid"
+                    },
+                    "status": {
+                        "$ref": "#/components/schemas/TaskStatus"
+                    },
+                    "state": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "State"
+                    },
+                    "messages": {
+                        "items": {
+                            "$ref": "#/components/schemas/MessageLog"
+                        },
+                        "type": "array",
+                        "title": "Messages"
+                    },
+                    "assistantGeneratedData": {
+                        "additionalProperties": {
+                            "type": "object"
+                        },
+                        "type": "object",
+                        "title": "Assistantgenerateddata",
+                        "default": {}
+                    },
+                    "retries": {
+                        "anyOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Retries",
+                        "default": 0
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "taskInstanceId",
+                    "status"
+                ],
+                "title": "TaskResponse"
+            },
+            "TaskStatus": {
+                "type": "string",
+                "enum": [
+                    "COMPLETED",
+                    "IN_PROGRESS",
+                    "FAILED",
+                    "NOT_STARTED"
+                ],
+                "title": "TaskStatus"
+            },
+            "TaskType": {
+                "type": "string",
+                "enum": [
+                    "SYSTEM_FUNCTION",
+                    "STATIC_DIALOG_FLOW",
+                    "DYNAMIC_DIALOG_FLOW",
+                    "EDUCATIONAL_CHAT_FLOW",
+                    "REQUEST_FOR_INFORMATION_EDUCATION",
+                    "UNSURE_EDUCATION",
+                    "IMPLICIT_EDUCATION",
+                    "LOOPING_EDUCATIONAL_CHAT_FLOW",
+                    "APPOINTMENT_SCHEDULING",
+                    "APPOINTMENT_RESCHEDULING",
+                    "APPOINTMENT_CANCELLATION",
+                    "APPOINTMENT_CONFIRMATION"
+                ],
+                "title": "TaskType"
+            },
+            "ValidationError": {
+                "properties": {
+                    "loc": {
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "integer"
+                                }
+                            ]
+                        },
+                        "type": "array",
+                        "title": "Location"
+                    },
+                    "msg": {
+                        "type": "string",
+                        "title": "Message"
+                    },
+                    "type": {
+                        "type": "string",
+                        "title": "Error Type"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "loc",
+                    "msg",
+                    "type"
+                ],
+                "title": "ValidationError"
+            },
+            "VerifyPhoneNumberRequest": {
+                "properties": {
+                    "phone_number": {
+                        "type": "string",
+                        "title": "Phone Number"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "phone_number"
+                ],
+                "title": "VerifyPhoneNumberRequest"
+            },
+            "VerifyPhoneNumberResponse": {
+                "properties": {
+                    "status": {
+                        "$ref": "#/components/schemas/PhoneNumberStatus"
+                    },
+                    "error_message": {
+                        "anyOf": [
+                            {
+                                "items": {
+                                    "type": "string"
+                                },
+                                "type": "array"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Error Message"
+                    },
+                    "line_type": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Line Type"
+                    },
+                    "formatted_phone_number": {
+                        "anyOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "null"
+                            }
+                        ],
+                        "title": "Formatted Phone Number"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "status",
+                    "formatted_phone_number"
+                ],
+                "title": "VerifyPhoneNumberResponse"
+            },
+            "VersionedOutcomePlanId": {
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$",
+                        "title": "Id"
+                    },
+                    "versionNumber": {
+                        "type": "integer",
+                        "title": "Versionnumber"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id",
+                    "versionNumber"
+                ],
+                "title": "VersionedOutcomePlanId"
+            }
+        }
+    }
+}

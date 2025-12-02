@@ -1,0 +1,2588 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "OpenAPI definition",
+        "version": "v0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8083/api",
+            "description": "Generated server url"
+        }
+    ],
+    "paths": {
+        "/v2/providers/{providerId}": {
+            "get": {
+                "tags": [
+                    "provider-controller"
+                ],
+                "operationId": "getProviderById",
+                "parameters": [
+                    {
+                        "name": "providerId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "skipStateCheck",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProviderResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "provider-controller"
+                ],
+                "operationId": "updateProvider",
+                "parameters": [
+                    {
+                        "name": "providerId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateProviderRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdateProviderResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/providers/{providerId}/deactivate": {
+            "put": {
+                "tags": [
+                    "provider-controller"
+                ],
+                "operationId": "deactivateProvider",
+                "parameters": [
+                    {
+                        "name": "providerId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdateProviderResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/providers/{providerId}/activate": {
+            "put": {
+                "tags": [
+                    "provider-controller"
+                ],
+                "operationId": "activateProvider",
+                "parameters": [
+                    {
+                        "name": "providerId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdateProviderResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/organizations/{organizationId}": {
+            "get": {
+                "tags": [
+                    "organization-controller"
+                ],
+                "operationId": "getOrganizationById",
+                "parameters": [
+                    {
+                        "name": "organizationId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "skipStateCheck",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OrganizationResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "organization-controller"
+                ],
+                "operationId": "updateOrganization",
+                "parameters": [
+                    {
+                        "name": "organizationId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateOrganizationRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdateOrganizationResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/organizations/{organizationId}/deactivate": {
+            "put": {
+                "tags": [
+                    "organization-controller"
+                ],
+                "operationId": "deactivateOrganization",
+                "parameters": [
+                    {
+                        "name": "organizationId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdateOrganizationResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/organizations/{organizationId}/activate": {
+            "put": {
+                "tags": [
+                    "organization-controller"
+                ],
+                "operationId": "activateOrganization",
+                "parameters": [
+                    {
+                        "name": "organizationId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdateOrganizationResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/organization-groups/{organizationGroupId}": {
+            "get": {
+                "tags": [
+                    "organization-group-controller"
+                ],
+                "operationId": "getOrganizationGroupById",
+                "parameters": [
+                    {
+                        "name": "organizationGroupId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "skipStateCheck",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OrganizationGroupResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "organization-group-controller"
+                ],
+                "operationId": "updateOrganizationGroup",
+                "parameters": [
+                    {
+                        "name": "organizationGroupId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateOrganizationGroupRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdateOrganizationGroupResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/organization-groups/{organizationGroupId}/deactivate": {
+            "put": {
+                "tags": [
+                    "organization-group-controller"
+                ],
+                "operationId": "deactivateOrganizationGroup",
+                "parameters": [
+                    {
+                        "name": "organizationGroupId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdateOrganizationGroupResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/organization-groups/{organizationGroupId}/activate": {
+            "put": {
+                "tags": [
+                    "organization-group-controller"
+                ],
+                "operationId": "activateOrganizationGroup",
+                "parameters": [
+                    {
+                        "name": "organizationGroupId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UpdateOrganizationGroupResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/organization-groups/educational-index-ids": {
+            "get": {
+                "tags": [
+                    "organization-group-controller"
+                ],
+                "operationId": "getEducationalIndexIds",
+                "parameters": [
+                    {
+                        "name": "outcomePlanId",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "adminGroupId",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "organizationGroupId",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "organizationId",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "providerId",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EducationalIndexIdsResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "organization-group-controller"
+                ],
+                "operationId": "updateEducationalIndexIds",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateEducationalIndexIdsRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/EducationalIndexIdsResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/admin-users/{adminUserId}": {
+            "get": {
+                "tags": [
+                    "admin-user-controller"
+                ],
+                "operationId": "getAdminUserById",
+                "parameters": [
+                    {
+                        "name": "adminUserId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AdminUser"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "admin-user-controller"
+                ],
+                "operationId": "updateAdminUser",
+                "parameters": [
+                    {
+                        "name": "adminUserId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateAdminUserRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AdminUser"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/admin-users/{adminUserId}/deactivate": {
+            "put": {
+                "tags": [
+                    "admin-user-controller"
+                ],
+                "operationId": "deactivateAdminUser",
+                "parameters": [
+                    {
+                        "name": "adminUserId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AdminUser"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/admin-users/{adminUserId}/activate": {
+            "put": {
+                "tags": [
+                    "admin-user-controller"
+                ],
+                "operationId": "activateAdminUser",
+                "parameters": [
+                    {
+                        "name": "adminUserId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AdminUser"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/admin-groups/{adminGroupId}": {
+            "get": {
+                "tags": [
+                    "admin-group-controller"
+                ],
+                "operationId": "getAdminGroupById",
+                "parameters": [
+                    {
+                        "name": "adminGroupId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "skipStateCheck",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean",
+                            "default": false
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AdminGroup"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "admin-group-controller"
+                ],
+                "operationId": "updateAdminGroup",
+                "parameters": [
+                    {
+                        "name": "adminGroupId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateAdminGroupRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AdminGroup"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/admin-groups/{adminGroupId}/twilio-sub-accounts/{twilioSubAccountId}": {
+            "put": {
+                "tags": [
+                    "admin-group-controller"
+                ],
+                "operationId": "updateTwilioSubAccount",
+                "parameters": [
+                    {
+                        "name": "adminGroupId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "twilioSubAccountId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateTwilioSubAccountRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "admin-group-controller"
+                ],
+                "operationId": "removeTwilioSubAccount",
+                "parameters": [
+                    {
+                        "name": "adminGroupId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "twilioSubAccountId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/v2/admin-groups/{adminGroupId}/deactivate": {
+            "put": {
+                "tags": [
+                    "admin-group-controller"
+                ],
+                "operationId": "deactivateAdminGroup",
+                "parameters": [
+                    {
+                        "name": "adminGroupId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AdminGroup"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/admin-groups/{adminGroupId}/activate": {
+            "put": {
+                "tags": [
+                    "admin-group-controller"
+                ],
+                "operationId": "activateAdminGroup",
+                "parameters": [
+                    {
+                        "name": "adminGroupId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AdminGroup"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/providers": {
+            "get": {
+                "tags": [
+                    "provider-controller"
+                ],
+                "operationId": "getProviders",
+                "parameters": [
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32",
+                            "default": 0
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32",
+                            "default": 999
+                        }
+                    },
+                    {
+                        "name": "adminGroupId",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "organizationGroupId",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "organizationId",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/ProviderResponse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "provider-controller"
+                ],
+                "operationId": "createProvider",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateProviderRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CreateProviderResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/organizations": {
+            "get": {
+                "tags": [
+                    "organization-controller"
+                ],
+                "operationId": "getOrganizations",
+                "parameters": [
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32",
+                            "default": 0
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32",
+                            "default": 999
+                        }
+                    },
+                    {
+                        "name": "adminGroupId",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "organizationGroupId",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/OrganizationResponse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "organization-controller"
+                ],
+                "operationId": "createOrganization",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateOrganizationRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CreateOrganizationResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/organization-groups": {
+            "get": {
+                "tags": [
+                    "organization-group-controller"
+                ],
+                "operationId": "getOrganizationGroups",
+                "parameters": [
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32",
+                            "default": 0
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32",
+                            "default": 999
+                        }
+                    },
+                    {
+                        "name": "adminGroupId",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/OrganizationGroupResponse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "organization-group-controller"
+                ],
+                "operationId": "createOrganizationGroup",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateOrganizationGroupRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CreateOrganizationGroupResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/organization-groups/{organizationGroupId}/faq/upload": {
+            "post": {
+                "tags": [
+                    "organization-group-controller"
+                ],
+                "operationId": "uploadFaq",
+                "parameters": [
+                    {
+                        "name": "organizationGroupId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "dirId",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "fileId",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "file"
+                                ],
+                                "type": "object",
+                                "properties": {
+                                    "file": {
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/UploaderResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/admin-users": {
+            "get": {
+                "tags": [
+                    "admin-user-controller"
+                ],
+                "operationId": "getAdminUsers",
+                "parameters": [
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32",
+                            "default": 0
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32",
+                            "default": 999
+                        }
+                    },
+                    {
+                        "name": "adminGroupId",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/AdminUser"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "admin-user-controller"
+                ],
+                "operationId": "createAdminUser",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateAdminUserRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AdminUser"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/admin-groups": {
+            "get": {
+                "tags": [
+                    "admin-group-controller"
+                ],
+                "operationId": "getAdminGroups",
+                "parameters": [
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32",
+                            "default": 0
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32",
+                            "default": 999
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/AdminGroup"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "admin-group-controller"
+                ],
+                "operationId": "createAdminGroup",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateAdminGroupRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AdminGroup"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/admin-groups/{adminGroupId}/twilio-sub-accounts": {
+            "post": {
+                "tags": [
+                    "admin-group-controller"
+                ],
+                "operationId": "addTwilioSubAccount",
+                "parameters": [
+                    {
+                        "name": "adminGroupId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/AddTwilioSubAccountRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/v2/providers/batch": {
+            "get": {
+                "tags": [
+                    "provider-controller"
+                ],
+                "operationId": "getProvidersByBatch",
+                "parameters": [
+                    {
+                        "name": "providerIds",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "uniqueItems": true,
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "object",
+                                    "additionalProperties": {
+                                        "$ref": "#/components/schemas/ProviderResponse"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/provideridbyentraid/{entraId}": {
+            "get": {
+                "tags": [
+                    "provider-entra-controller"
+                ],
+                "operationId": "getProviderIdByEntraId",
+                "parameters": [
+                    {
+                        "name": "entraId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/providerbyentraid/{entraId}": {
+            "get": {
+                "tags": [
+                    "provider-entra-controller"
+                ],
+                "operationId": "getProviderByEntraId",
+                "parameters": [
+                    {
+                        "name": "entraId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/ProviderResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/phone-numbers/associations/{phoneNumber}": {
+            "get": {
+                "tags": [
+                    "phone-number-controller"
+                ],
+                "operationId": "getPhoneNumber",
+                "parameters": [
+                    {
+                        "name": "phoneNumber",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/PhoneNumberAssociation"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/organizations/phone-number/{phoneNumber}": {
+            "get": {
+                "tags": [
+                    "organization-controller"
+                ],
+                "operationId": "getOrganizationByPhoneNumber",
+                "parameters": [
+                    {
+                        "name": "phoneNumber",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OrganizationResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/organizations/mila-phone-number/{milaPhoneNumber}": {
+            "get": {
+                "tags": [
+                    "organization-controller"
+                ],
+                "operationId": "getOrganizationByMilaPhoneNumber",
+                "parameters": [
+                    {
+                        "name": "milaPhoneNumber",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/OrganizationResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/organization-groups/{organizationGroupId}/storage/upload-url": {
+            "get": {
+                "tags": [
+                    "organization-group-controller"
+                ],
+                "operationId": "getStorageUploadUrl",
+                "parameters": [
+                    {
+                        "name": "organizationGroupId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "outcomePlanId",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "contentResourceType",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "CASE_CONTENT",
+                                "KNOWLEDGE_CONTENT"
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/organization-groups/{organizationGroupId}/storage/read-only-url": {
+            "get": {
+                "tags": [
+                    "organization-group-controller"
+                ],
+                "operationId": "getStorageReadOnlyUrl",
+                "parameters": [
+                    {
+                        "name": "organizationGroupId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "outcomePlanId",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "contentResourceType",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "CASE_CONTENT",
+                                "KNOWLEDGE_CONTENT"
+                            ]
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/organization-groups/{organizationGroupId}/faq/list": {
+            "get": {
+                "tags": [
+                    "organization-group-controller"
+                ],
+                "operationId": "listFaq",
+                "parameters": [
+                    {
+                        "name": "organizationGroupId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/FaqResource"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/admin-users/entra-id/{entraId}": {
+            "get": {
+                "tags": [
+                    "admin-user-controller"
+                ],
+                "operationId": "getAdminUserByEntraId",
+                "parameters": [
+                    {
+                        "name": "entraId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/AdminUser"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "UpdateProviderRequest": {
+                "required": [
+                    "emailId",
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "specialization": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "emailId": {
+                        "type": "string"
+                    },
+                    "entraId": {
+                        "type": "string"
+                    },
+                    "state": {
+                        "type": "string",
+                        "enum": [
+                            "ACTIVE",
+                            "INACTIVE"
+                        ]
+                    },
+                    "externalId": {
+                        "type": "string"
+                    },
+                    "summary": {
+                        "type": "string"
+                    }
+                }
+            },
+            "UpdateProviderResponse": {
+                "type": "object",
+                "properties": {
+                    "providerId": {
+                        "type": "string"
+                    }
+                }
+            },
+            "InboundVoiceAgentPhoneNumber": {
+                "required": [
+                    "outcomePlanType",
+                    "phoneNumber",
+                    "twilioSubAccountId"
+                ],
+                "type": "object",
+                "properties": {
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "twilioSubAccountId": {
+                        "type": "string"
+                    },
+                    "outcomePlanType": {
+                        "type": "string",
+                        "enum": [
+                            "PATIENT_INQUIRY_APPOINTMENT_MANAGEMENT"
+                        ]
+                    },
+                    "outcomePlanId": {
+                        "$ref": "#/components/schemas/VersionedIdOutcomePlanId"
+                    }
+                }
+            },
+            "PhoneNumberWithExtension": {
+                "required": [
+                    "phoneNumber"
+                ],
+                "type": "object",
+                "properties": {
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "extension": {
+                        "type": "string"
+                    }
+                }
+            },
+            "UpdateOrganizationRequest": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "milaPhoneNumber": {
+                        "type": "string"
+                    },
+                    "transferPhoneNumber": {
+                        "$ref": "#/components/schemas/PhoneNumberWithExtension"
+                    },
+                    "milaPhoneNumberTwilioSubAccountId": {
+                        "type": "string"
+                    },
+                    "inboundVoiceAgentPhoneNumbers": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "#/components/schemas/InboundVoiceAgentPhoneNumber"
+                        }
+                    },
+                    "timeZone": {
+                        "type": "string"
+                    },
+                    "officeHours": {
+                        "type": "string"
+                    },
+                    "externalId": {
+                        "type": "string"
+                    }
+                }
+            },
+            "VersionedIdOutcomePlanId": {
+                "required": [
+                    "id",
+                    "versionNumber"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "versionNumber": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                }
+            },
+            "UpdateOrganizationResponse": {
+                "type": "object",
+                "properties": {
+                    "organizationId": {
+                        "type": "string"
+                    }
+                }
+            },
+            "UpdateOrganizationGroupRequest": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "assistantName": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "milaPhoneNumber": {
+                        "type": "string"
+                    },
+                    "transferPhoneNumber": {
+                        "$ref": "#/components/schemas/PhoneNumberWithExtension"
+                    },
+                    "milaPhoneNumberTwilioSubAccountId": {
+                        "type": "string"
+                    },
+                    "enabledOutcomePlanTypes": {
+                        "uniqueItems": true,
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "PATIENT_FOLLOW_UP_APPOINTMENT_CANCELLATION",
+                                "PATIENT_FOLLOW_UP_APPOINTMENT_CONFIRMATION",
+                                "PATIENT_FOLLOW_UP_APPOINTMENT_SCHEDULING",
+                                "PATIENT_FOLLOW_UP_APPOINTMENT_RESCHEDULING",
+                                "PATIENT_FOLLOW_UP_APPOINTMENT_MANAGEMENT",
+                                "PATIENT_FOLLOW_UP_DATA_COLLECTION",
+                                "PATIENT_FOLLOW_UP_PAYMENT_COLLECTION",
+                                "PATIENT_OUTREACH_APPOINTMENT_SCHEDULING_REQUEST",
+                                "PATIENT_OUTREACH_COLONOSCOPY",
+                                "PATIENT_OUTREACH_TREATMENT_PLAN",
+                                "PATIENT_INQUIRY_APPOINTMENT_MANAGEMENT",
+                                "POST_PROCEDURE_FOLLOW_UP_COLONOSCOPY",
+                                "PROCEDURE_PREPARATION_COLONOSCOPY"
+                            ]
+                        }
+                    },
+                    "externalId": {
+                        "type": "string"
+                    }
+                }
+            },
+            "UpdateOrganizationGroupResponse": {
+                "type": "object",
+                "properties": {
+                    "organizationGroupId": {
+                        "type": "string"
+                    }
+                }
+            },
+            "UpdateEducationalIndexIdsRequest": {
+                "required": [
+                    "adminGroupId",
+                    "outcomePlanId"
+                ],
+                "type": "object",
+                "properties": {
+                    "outcomePlanId": {
+                        "type": "string"
+                    },
+                    "adminGroupId": {
+                        "type": "string"
+                    },
+                    "organizationGroupId": {
+                        "type": "string"
+                    },
+                    "organizationId": {
+                        "type": "string"
+                    },
+                    "providerId": {
+                        "type": "string"
+                    },
+                    "educationalIndexIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "EducationalIndexIdsResponse": {
+                "required": [
+                    "adminGroupId",
+                    "outcomePlanId"
+                ],
+                "type": "object",
+                "properties": {
+                    "outcomePlanId": {
+                        "type": "string"
+                    },
+                    "adminGroupId": {
+                        "type": "string"
+                    },
+                    "organizationGroupId": {
+                        "type": "string"
+                    },
+                    "organizationId": {
+                        "type": "string"
+                    },
+                    "providerId": {
+                        "type": "string"
+                    },
+                    "educationalIndexIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "UpdateAdminUserRequest": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "entraId": {
+                        "type": "string"
+                    },
+                    "emailId": {
+                        "type": "string"
+                    }
+                }
+            },
+            "AdminGroup": {
+                "required": [
+                    "adminGroupId",
+                    "name",
+                    "phoneNumber",
+                    "state",
+                    "twilioSubAccountIds"
+                ],
+                "type": "object",
+                "properties": {
+                    "adminGroupId": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "twilioSubAccountIds": {
+                        "uniqueItems": true,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "state": {
+                        "type": "string",
+                        "enum": [
+                            "ACTIVE",
+                            "INACTIVE"
+                        ]
+                    }
+                }
+            },
+            "AdminUser": {
+                "required": [
+                    "adminGroup",
+                    "adminUserId",
+                    "emailId",
+                    "name",
+                    "state"
+                ],
+                "type": "object",
+                "properties": {
+                    "adminUserId": {
+                        "type": "string"
+                    },
+                    "adminGroup": {
+                        "$ref": "#/components/schemas/AdminGroup"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "entraId": {
+                        "type": "string"
+                    },
+                    "emailId": {
+                        "type": "string"
+                    },
+                    "state": {
+                        "type": "string",
+                        "enum": [
+                            "ACTIVE",
+                            "INACTIVE"
+                        ]
+                    }
+                }
+            },
+            "UpdateAdminGroupRequest": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "phoneNumber": {
+                        "type": "string"
+                    }
+                }
+            },
+            "UpdateTwilioSubAccountRequest": {
+                "required": [
+                    "authToken"
+                ],
+                "type": "object",
+                "properties": {
+                    "authToken": {
+                        "type": "string"
+                    }
+                }
+            },
+            "CreateProviderRequest": {
+                "required": [
+                    "emailId",
+                    "name",
+                    "organizationGroupId",
+                    "organizationId"
+                ],
+                "type": "object",
+                "properties": {
+                    "organizationGroupId": {
+                        "type": "string"
+                    },
+                    "organizationId": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "specialization": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "emailId": {
+                        "type": "string"
+                    },
+                    "externalId": {
+                        "type": "string"
+                    },
+                    "summary": {
+                        "type": "string"
+                    }
+                }
+            },
+            "CreateProviderResponse": {
+                "type": "object",
+                "properties": {
+                    "providerId": {
+                        "type": "string"
+                    }
+                }
+            },
+            "CreateOrganizationRequest": {
+                "required": [
+                    "address",
+                    "name",
+                    "officeHours",
+                    "organizationGroupId",
+                    "phoneNumber",
+                    "timeZone"
+                ],
+                "type": "object",
+                "properties": {
+                    "organizationGroupId": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "milaPhoneNumber": {
+                        "type": "string"
+                    },
+                    "transferPhoneNumber": {
+                        "$ref": "#/components/schemas/PhoneNumberWithExtension"
+                    },
+                    "milaPhoneNumberTwilioSubAccountId": {
+                        "type": "string"
+                    },
+                    "inboundVoiceAgentPhoneNumbers": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "#/components/schemas/InboundVoiceAgentPhoneNumber"
+                        }
+                    },
+                    "timeZone": {
+                        "type": "string"
+                    },
+                    "officeHours": {
+                        "type": "string"
+                    },
+                    "externalId": {
+                        "type": "string"
+                    }
+                }
+            },
+            "CreateOrganizationResponse": {
+                "type": "object",
+                "properties": {
+                    "organizationId": {
+                        "type": "string"
+                    }
+                }
+            },
+            "CreateOrganizationGroupRequest": {
+                "required": [
+                    "address",
+                    "adminGroupId",
+                    "assistantName",
+                    "enabledOutcomePlanTypes",
+                    "milaPhoneNumber",
+                    "milaPhoneNumberTwilioSubAccountId",
+                    "name",
+                    "phoneNumber"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "assistantName": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "milaPhoneNumber": {
+                        "type": "string"
+                    },
+                    "transferPhoneNumber": {
+                        "$ref": "#/components/schemas/PhoneNumberWithExtension"
+                    },
+                    "milaPhoneNumberTwilioSubAccountId": {
+                        "type": "string"
+                    },
+                    "enabledOutcomePlanTypes": {
+                        "uniqueItems": true,
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "PATIENT_FOLLOW_UP_APPOINTMENT_CANCELLATION",
+                                "PATIENT_FOLLOW_UP_APPOINTMENT_CONFIRMATION",
+                                "PATIENT_FOLLOW_UP_APPOINTMENT_SCHEDULING",
+                                "PATIENT_FOLLOW_UP_APPOINTMENT_RESCHEDULING",
+                                "PATIENT_FOLLOW_UP_APPOINTMENT_MANAGEMENT",
+                                "PATIENT_FOLLOW_UP_DATA_COLLECTION",
+                                "PATIENT_FOLLOW_UP_PAYMENT_COLLECTION",
+                                "PATIENT_OUTREACH_APPOINTMENT_SCHEDULING_REQUEST",
+                                "PATIENT_OUTREACH_COLONOSCOPY",
+                                "PATIENT_OUTREACH_TREATMENT_PLAN",
+                                "PATIENT_INQUIRY_APPOINTMENT_MANAGEMENT",
+                                "POST_PROCEDURE_FOLLOW_UP_COLONOSCOPY",
+                                "PROCEDURE_PREPARATION_COLONOSCOPY"
+                            ]
+                        }
+                    },
+                    "adminGroupId": {
+                        "type": "string"
+                    },
+                    "externalId": {
+                        "type": "string"
+                    }
+                }
+            },
+            "CreateOrganizationGroupResponse": {
+                "type": "object",
+                "properties": {
+                    "organizationGroupId": {
+                        "type": "string"
+                    }
+                }
+            },
+            "UploaderResponse": {
+                "required": [
+                    "dirId",
+                    "fileId"
+                ],
+                "type": "object",
+                "properties": {
+                    "dirId": {
+                        "type": "string"
+                    },
+                    "fileId": {
+                        "type": "string"
+                    }
+                }
+            },
+            "CreateAdminUserRequest": {
+                "required": [
+                    "adminGroupId",
+                    "emailId",
+                    "name"
+                ],
+                "type": "object",
+                "properties": {
+                    "adminGroupId": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "entraId": {
+                        "type": "string"
+                    },
+                    "emailId": {
+                        "type": "string"
+                    }
+                }
+            },
+            "CreateAdminGroupRequest": {
+                "required": [
+                    "name",
+                    "phoneNumber"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "phoneNumber": {
+                        "type": "string"
+                    }
+                }
+            },
+            "AddTwilioSubAccountRequest": {
+                "required": [
+                    "authToken",
+                    "twilioSubAccountId"
+                ],
+                "type": "object",
+                "properties": {
+                    "twilioSubAccountId": {
+                        "type": "string"
+                    },
+                    "authToken": {
+                        "type": "string"
+                    }
+                }
+            },
+            "OrganizationGroupResponse": {
+                "required": [
+                    "address",
+                    "adminGroup",
+                    "assistantName",
+                    "enabledOutcomePlanTypes",
+                    "milaPhoneNumber",
+                    "milaPhoneNumberTwilioSubAccountId",
+                    "name",
+                    "organizationGroupId",
+                    "phoneNumber",
+                    "state"
+                ],
+                "type": "object",
+                "properties": {
+                    "organizationGroupId": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "assistantName": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "milaPhoneNumber": {
+                        "type": "string"
+                    },
+                    "transferPhoneNumber": {
+                        "$ref": "#/components/schemas/PhoneNumberWithExtension"
+                    },
+                    "milaPhoneNumberTwilioSubAccountId": {
+                        "type": "string"
+                    },
+                    "enabledOutcomePlanTypes": {
+                        "uniqueItems": true,
+                        "type": "array",
+                        "items": {
+                            "type": "string",
+                            "enum": [
+                                "PATIENT_FOLLOW_UP_APPOINTMENT_CANCELLATION",
+                                "PATIENT_FOLLOW_UP_APPOINTMENT_CONFIRMATION",
+                                "PATIENT_FOLLOW_UP_APPOINTMENT_SCHEDULING",
+                                "PATIENT_FOLLOW_UP_APPOINTMENT_RESCHEDULING",
+                                "PATIENT_FOLLOW_UP_APPOINTMENT_MANAGEMENT",
+                                "PATIENT_FOLLOW_UP_DATA_COLLECTION",
+                                "PATIENT_FOLLOW_UP_PAYMENT_COLLECTION",
+                                "PATIENT_OUTREACH_APPOINTMENT_SCHEDULING_REQUEST",
+                                "PATIENT_OUTREACH_COLONOSCOPY",
+                                "PATIENT_OUTREACH_TREATMENT_PLAN",
+                                "PATIENT_INQUIRY_APPOINTMENT_MANAGEMENT",
+                                "POST_PROCEDURE_FOLLOW_UP_COLONOSCOPY",
+                                "PROCEDURE_PREPARATION_COLONOSCOPY"
+                            ]
+                        }
+                    },
+                    "state": {
+                        "type": "string",
+                        "enum": [
+                            "ACTIVE",
+                            "INACTIVE"
+                        ]
+                    },
+                    "adminGroup": {
+                        "$ref": "#/components/schemas/AdminGroup"
+                    },
+                    "externalId": {
+                        "type": "string"
+                    }
+                }
+            },
+            "OrganizationResponse": {
+                "required": [
+                    "address",
+                    "name",
+                    "officeHours",
+                    "organizationGroup",
+                    "organizationId",
+                    "phoneNumber",
+                    "state",
+                    "timeZone"
+                ],
+                "type": "object",
+                "properties": {
+                    "organizationId": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "milaPhoneNumber": {
+                        "type": "string"
+                    },
+                    "transferPhoneNumber": {
+                        "$ref": "#/components/schemas/PhoneNumberWithExtension"
+                    },
+                    "milaPhoneNumberTwilioSubAccountId": {
+                        "type": "string"
+                    },
+                    "inboundVoiceAgentPhoneNumbers": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "#/components/schemas/InboundVoiceAgentPhoneNumber"
+                        }
+                    },
+                    "timeZone": {
+                        "type": "string"
+                    },
+                    "officeHours": {
+                        "type": "string"
+                    },
+                    "state": {
+                        "type": "string",
+                        "enum": [
+                            "ACTIVE",
+                            "INACTIVE"
+                        ]
+                    },
+                    "organizationGroup": {
+                        "$ref": "#/components/schemas/OrganizationGroupResponse"
+                    },
+                    "externalId": {
+                        "type": "string"
+                    }
+                }
+            },
+            "ProviderResponse": {
+                "required": [
+                    "emailId",
+                    "name",
+                    "organization",
+                    "providerId",
+                    "state"
+                ],
+                "type": "object",
+                "properties": {
+                    "providerId": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "specialization": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "emailId": {
+                        "type": "string"
+                    },
+                    "entraId": {
+                        "type": "string"
+                    },
+                    "state": {
+                        "type": "string",
+                        "enum": [
+                            "ACTIVE",
+                            "INACTIVE"
+                        ]
+                    },
+                    "organization": {
+                        "$ref": "#/components/schemas/OrganizationResponse"
+                    },
+                    "externalId": {
+                        "type": "string"
+                    },
+                    "summary": {
+                        "type": "string"
+                    }
+                }
+            },
+            "PhoneNumberAssociation": {
+                "required": [
+                    "direction",
+                    "entityId",
+                    "entityType",
+                    "phoneNumber"
+                ],
+                "type": "object",
+                "properties": {
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "entityType": {
+                        "type": "string",
+                        "enum": [
+                            "PROVIDER",
+                            "ORGANIZATION",
+                            "ORGANIZATION_GROUP"
+                        ]
+                    },
+                    "entityId": {
+                        "type": "string"
+                    },
+                    "direction": {
+                        "type": "string",
+                        "enum": [
+                            "INBOUND",
+                            "OUTBOUND"
+                        ]
+                    }
+                }
+            },
+            "FaqResource": {
+                "type": "object",
+                "properties": {
+                    "directory": {
+                        "type": "string"
+                    },
+                    "files": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
