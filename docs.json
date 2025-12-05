@@ -57,6 +57,13 @@
             ]
           },
             {
+                "group": "Org Structure: Admin Group",
+                "pages": [
+                    "api-documentation/admin/get-admin-group",
+                    "api-documentation/admin/get-admin-user"
+                ]
+            },
+            {
                 "group": "Org Structure: Organization Group",
                 "pages": [
                     "api-documentation/organization-group/create-organization-group",
