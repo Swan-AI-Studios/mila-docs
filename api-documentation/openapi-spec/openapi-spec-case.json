@@ -1,0 +1,1946 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "OpenAPI definition",
+        "version": "v0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:8082/api",
+            "description": "Generated server url"
+        }
+    ],
+    "security": [
+        {
+            "Bearer Authentication": []
+        }
+    ],
+    "paths": {
+        "/v2/cases/{caseId}/conversation-interaction": {
+            "get": {
+                "tags": [
+                    "case-controller"
+                ],
+                "operationId": "getConversationInteraction",
+                "parameters": [
+                    {
+                        "name": "caseId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "organizationGroupId",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Interaction"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/cases/{caseId}/complete": {
+            "get": {
+                "tags": [
+                    "case-controller"
+                ],
+                "operationId": "getCaseById",
+                "parameters": [
+                    {
+                        "name": "caseId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CaseResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "case-controller"
+                ],
+                "operationId": "updateCase",
+                "parameters": [
+                    {
+                        "name": "caseId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "organizationGroupId",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateCaseRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CaseResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/cases/{caseId}/close": {
+            "get": {
+                "tags": [
+                    "case-controller"
+                ],
+                "operationId": "getCaseById",
+                "parameters": [
+                    {
+                        "name": "caseId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CaseResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "case-controller"
+                ],
+                "operationId": "updateCase",
+                "parameters": [
+                    {
+                        "name": "caseId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "organizationGroupId",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateCaseRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CaseResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/cases/{caseId}/cancel": {
+            "get": {
+                "tags": [
+                    "case-controller"
+                ],
+                "operationId": "getCaseById",
+                "parameters": [
+                    {
+                        "name": "caseId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CaseResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "case-controller"
+                ],
+                "operationId": "updateCase",
+                "parameters": [
+                    {
+                        "name": "caseId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "organizationGroupId",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateCaseRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CaseResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/cases/{caseId}": {
+            "get": {
+                "tags": [
+                    "case-controller"
+                ],
+                "operationId": "getCaseById",
+                "parameters": [
+                    {
+                        "name": "caseId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CaseResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "case-controller"
+                ],
+                "operationId": "updateCase",
+                "parameters": [
+                    {
+                        "name": "caseId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "organizationGroupId",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateCaseRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CaseResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/cases": {
+            "get": {
+                "tags": [
+                    "case-controller"
+                ],
+                "operationId": "getCases",
+                "parameters": [
+                    {
+                        "name": "offset",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32",
+                            "default": 0
+                        }
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int32",
+                            "default": 10
+                        }
+                    },
+                    {
+                        "name": "search_text",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "status",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetCasesResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "case-controller"
+                ],
+                "operationId": "createCase",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateCaseRequest"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/CreateCaseResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/v2/cases/{caseId}/interactions": {
+            "get": {
+                "tags": [
+                    "case-controller"
+                ],
+                "operationId": "getInteractions",
+                "parameters": [
+                    {
+                        "name": "caseId",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/InteractionListResponse"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "AdminGroup": {
+                "required": [
+                    "adminGroupId",
+                    "name",
+                    "phoneNumber",
+                    "twilioSubAccountIds"
+                ],
+                "type": "object",
+                "properties": {
+                    "adminGroupId": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "twilioSubAccountIds": {
+                        "uniqueItems": true,
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "AnnualPhysicalAppointment": {
+                "required": [
+                    "title",
+                    "type"
+                ],
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/BaseAppointmentObjectObject"
+                    }
+                ]
+            },
+            "ChronicDiseaseManagementAppointment": {
+                "required": [
+                    "title",
+                    "type"
+                ],
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/BaseAppointmentObjectObject"
+                    }
+                ]
+            },
+            "ColonoscopyAppointment": {
+                "required": [
+                    "title",
+                    "type"
+                ],
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/BaseAppointmentObjectObject"
+                    }
+                ]
+            },
+            "DentalAppointment": {
+                "required": [
+                    "title",
+                    "type"
+                ],
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/BaseAppointmentObjectObject"
+                    }
+                ]
+            },
+            "DiagnosticScreeningAppointment": {
+                "required": [
+                    "title",
+                    "type"
+                ],
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/BaseAppointmentObjectObject"
+                    }
+                ]
+            },
+            "DischargeFollowUpAppointment": {
+                "required": [
+                    "title",
+                    "type"
+                ],
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/BaseAppointmentObjectObject"
+                    }
+                ]
+            },
+            "KetamineInfusionAppointment": {
+                "required": [
+                    "title",
+                    "type"
+                ],
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/BaseAppointmentObjectObject"
+                    }
+                ]
+            },
+            "LabWorkAppointment": {
+                "required": [
+                    "title",
+                    "type"
+                ],
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/BaseAppointmentObjectObject"
+                    }
+                ]
+            },
+            "MentalHealthAppointment": {
+                "required": [
+                    "title",
+                    "type"
+                ],
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/BaseAppointmentObjectObject"
+                    }
+                ]
+            },
+            "PcpFollowUpAppointment": {
+                "required": [
+                    "title",
+                    "type"
+                ],
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/BaseAppointmentObjectObject"
+                    }
+                ]
+            },
+            "PediatricAppointment": {
+                "required": [
+                    "title",
+                    "type"
+                ],
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/BaseAppointmentObjectObject"
+                    }
+                ]
+            },
+            "PhysicalTherapyAppointment": {
+                "required": [
+                    "title",
+                    "type"
+                ],
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/BaseAppointmentObjectObject"
+                    }
+                ]
+            },
+            "PreventiveCareAppointment": {
+                "required": [
+                    "title",
+                    "type"
+                ],
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/BaseAppointmentObjectObject"
+                    }
+                ]
+            },
+            "PrimaryCareAppointment": {
+                "required": [
+                    "title",
+                    "type"
+                ],
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/BaseAppointmentObjectObject"
+                    }
+                ]
+            },
+            "ProcedureAppointment": {
+                "required": [
+                    "title",
+                    "type"
+                ],
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/BaseAppointmentObjectObject"
+                    }
+                ]
+            },
+            "SpecialistAppointment": {
+                "required": [
+                    "title",
+                    "type"
+                ],
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/BaseAppointmentObjectObject"
+                    }
+                ]
+            },
+            "TelehealthAppointment": {
+                "required": [
+                    "title",
+                    "type"
+                ],
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/BaseAppointmentObjectObject"
+                    }
+                ]
+            },
+            "TherapyRehabilitationAppointment": {
+                "required": [
+                    "title",
+                    "type"
+                ],
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/BaseAppointmentObjectObject"
+                    }
+                ]
+            },
+            "WomensHealthAppointment": {
+                "required": [
+                    "title",
+                    "type"
+                ],
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/BaseAppointmentObjectObject"
+                    }
+                ]
+            },
+            "SurgeryAppointment": {
+                "required": [
+                    "title",
+                    "type"
+                ],
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/BaseAppointmentObjectObject"
+                    },
+                    {
+                        "type": "object",
+                        "properties": {
+                            "surgeryType": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ]
+            },
+            "AppointmentEscalation": {
+                "required": [
+                    "appointmentId",
+                    "categoryType",
+                    "createdAt",
+                    "description",
+                    "escalationId",
+                    "severity",
+                    "status",
+                    "taskGraphActionType",
+                    "taskGraphDescription",
+                    "taskGraphInstanceId",
+                    "taskGraphName",
+                    "type"
+                ],
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/BaseEscalationObjectObject"
+                    },
+                    {
+                        "properties": {
+                            "appointmentId": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ]
+            },
+            "BaseAppointmentObjectObject": {
+                "required": [
+                    "title",
+                    "type",
+                    "status"
+                ],
+                "type": "object",
+                "properties": {
+                    "appointmentId": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "ANNUAL_PHYSICAL",
+                            "CHRONIC_DISEASE_MANAGEMENT",
+                            "COLONOSCOPY",
+                            "DENTAL",
+                            "DIAGNOSTIC_SCREENING",
+                            "DISCHARGE_FOLLOW_UP",
+                            "KETAMINE_INFUSION",
+                            "LAB_WORK",
+                            "MENTAL_HEALTH",
+                            "PCP_FOLLOW_UP",
+                            "PEDIATRIC",
+                            "PHYSICAL_THERAPY",
+                            "PREVENTIVE_CARE",
+                            "PRIMARY_CARE",
+                            "PROCEDURE",
+                            "SPECIALIST",
+                            "SURGERY",
+                            "TELEHEALTH",
+                            "THERAPY_REHABIILITATION",
+                            "WOMENS_HEALTH"
+                        ]
+                    },
+                    "status": {
+                        "type": "string",
+                        "enum": [
+                            "CREATED",
+                            "SCHEDULED",
+                            "CONFIRMED"
+                        ]
+                    },
+                    "date": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "externalId": {
+                        "type": "string"
+                    },
+                    "externalTypeId": {
+                        "type": "string"
+                    },
+                    "provider": {
+                        "$ref": "#/components/schemas/Provider"
+                    },
+                    "providerId": {
+                        "type": "string"
+                    },
+                    "providerData": {
+                        "$ref": "#/components/schemas/JsonNode"
+                    }
+                },
+                "discriminator": {
+                    "propertyName": "type",
+                    "mapping": {
+                        "ANNUAL_PHYSICAL": "#/components/schemas/AnnualPhysicalAppointment",
+                        "CHRONIC_DISEASE_MANAGEMENT": "#/components/schemas/ChronicDiseaseManagementAppointment",
+                        "COLONOSCOPY": "#/components/schemas/ColonoscopyAppointment",
+                        "DENTAL": "#/components/schemas/DentalAppointment",
+                        "DIAGNOSTIC_SCREENING": "#/components/schemas/DiagnosticScreeningAppointment",
+                        "DISCHARGE_FOLLOW_UP": "#/components/schemas/DischargeFollowUpAppointment",
+                        "KETAMINE_INFUSION": "#/components/schemas/KetamineInfusionAppointment",
+                        "LAB_WORK": "#/components/schemas/LabWorkAppointment",
+                        "MENTAL_HEALTH": "#/components/schemas/MentalHealthAppointment",
+                        "PCP_FOLLOW_UP": "#/components/schemas/PcpFollowUpAppointment",
+                        "PEDIATRIC": "#/components/schemas/PediatricAppointment",
+                        "PHYSICAL_THERAPY": "#/components/schemas/PhysicalTherapyAppointment",
+                        "PREVENTIVE_CARE": "#/components/schemas/PreventiveCareAppointment",
+                        "PRIMARY_CARE": "#/components/schemas/PrimaryCareAppointment",
+                        "PROCEDURE": "#/components/schemas/ProcedureAppointment",
+                        "SPECIALIST": "#/components/schemas/SpecialistAppointment",
+                        "SURGERY": "#/components/schemas/SurgeryAppointment",
+                        "TELEHEALTH": "#/components/schemas/TelehealthAppointment",
+                        "THERAPY_REHABIILITATION": "#/components/schemas/TherapyRehabilitationAppointment",
+                        "WOMENS_HEALTH": "#/components/schemas/WomensHealthAppointment"
+                    }
+                }
+            },
+            "BaseEscalationObjectObject": {
+                "required": [
+                    "categoryType",
+                    "createdAt",
+                    "description",
+                    "escalationId",
+                    "severity",
+                    "status",
+                    "taskGraphActionType",
+                    "taskGraphDescription",
+                    "taskGraphInstanceId",
+                    "taskGraphName",
+                    "type"
+                ],
+                "properties": {
+                    "escalationId": {
+                        "type": "string"
+                    },
+                    "appointmentId": {
+                        "type": "string"
+                    },
+                    "taskGraphInstanceId": {
+                        "type": "string"
+                    },
+                    "taskGraphName": {
+                        "type": "string"
+                    },
+                    "taskGraphDescription": {
+                        "type": "string"
+                    },
+                    "taskGraphActionType": {
+                        "type": "string",
+                        "enum": [
+                            "GREETING",
+                            "ENGAGEMENT_REQUEST",
+                            "IDENTITY_VERIFICATION",
+                            "LEGAL_DISCLAIMERS",
+                            "APPOINTMENT_SCHEDULING",
+                            "APPOINTMENT_REMINDER",
+                            "MEDICATION_ADHERENCE",
+                            "MEDICATION_TAPERING",
+                            "LIFESTYLE_MANAGEMENT",
+                            "LOGISTICS_REMINDER",
+                            "SYMPTOM_MANAGEMENT",
+                            "SIGN_OFF"
+                        ]
+                    },
+                    "categoryType": {
+                        "type": "string",
+                        "enum": [
+                            "APPOINTMENT",
+                            "MEDICATION",
+                            "GENERIC"
+                        ]
+                    },
+                    "status": {
+                        "type": "string",
+                        "enum": [
+                            "ACTIVE",
+                            "RESOLVED"
+                        ]
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "NO_ENGAGEMENT",
+                            "EMERGENCY",
+                            "GOAL_NOT_MET",
+                            "USER_CONCERNS"
+                        ]
+                    },
+                    "severity": {
+                        "type": "string",
+                        "enum": [
+                            "MODERATE",
+                            "CRITICAL"
+                        ]
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "resolvedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    }
+                },
+                "discriminator": {
+                    "propertyName": "categoryType",
+                    "mapping": {
+                        "APPOINTMENT": "#/components/schemas/AppointmentEscalation",
+                        "MEDICATION": "#/components/schemas/MedicationEscalation",
+                        "GENERIC": "#/components/schemas/GenericEscalation"
+                    }
+                }
+            },
+            "GenericEscalation": {
+                "required": [
+                    "categoryType",
+                    "createdAt",
+                    "description",
+                    "escalationId",
+                    "severity",
+                    "status",
+                    "taskGraphActionType",
+                    "taskGraphDescription",
+                    "taskGraphInstanceId",
+                    "taskGraphName",
+                    "type"
+                ],
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/BaseEscalationObjectObject"
+                    }
+                ]
+            },
+            "LocalTime": {
+                "type": "object",
+                "properties": {
+                    "hour": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "minute": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "second": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "nano": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                }
+            },
+            "JsonNode": {
+                "type": "object"
+            },
+            "Medication": {
+                "required": [
+                    "dose",
+                    "medicationClass",
+                    "name",
+                    "schedule"
+                ],
+                "type": "object",
+                "properties": {
+                    "medicationId": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "dose": {
+                        "type": "string"
+                    },
+                    "medicationClass": {
+                        "type": "string",
+                        "enum": [
+                            "ANALGESIC",
+                            "ANTIBIOTIC",
+                            "ANTIDEPRESSANT",
+                            "ANTIEPILEPTIC",
+                            "ANTIHYPERTENSIVE",
+                            "ANTIDIABETIC",
+                            "ANTICOAGULANT_ANTIPLATELET",
+                            "ANTIFUNGAL",
+                            "ANTIHISTAMINE",
+                            "ANTIVIRAL",
+                            "ANTIPSYCHOTIC",
+                            "BRONCHODILATOR",
+                            "CORTICOSTEROID",
+                            "HORMONAL_THERAPY",
+                            "IMMUNOSUPPRESSANT",
+                            "SEDATIVE_HYPNOTIC",
+                            "ANTIINFLAMMATORY",
+                            "ANTIPYRETIC",
+                            "DECONGESTANT",
+                            "EXPECTORANT",
+                            "LAXATIVE",
+                            "MUCOLYTIC",
+                            "PAIN_RELIEVER",
+                            "STATINS",
+                            "STIMULANT",
+                            "VASOCONSTRICTOR"
+                        ]
+                    },
+                    "schedule": {
+                        "type": "string"
+                    }
+                }
+            },
+            "MedicationEscalation": {
+                "required": [
+                    "categoryType",
+                    "createdAt",
+                    "description",
+                    "escalationId",
+                    "medicationId",
+                    "severity",
+                    "status",
+                    "taskGraphActionType",
+                    "taskGraphDescription",
+                    "taskGraphInstanceId",
+                    "taskGraphName",
+                    "type"
+                ],
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "#/components/schemas/BaseEscalationObjectObject"
+                    },
+                    {
+                        "type": "object",
+                        "properties": {
+                            "medicationId": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ]
+            },
+            "Organization": {
+                "required": [
+                    "address",
+                    "inboundVoiceAgentPhoneNumbers",
+                    "name",
+                    "organizationGroup",
+                    "organizationId",
+                    "phoneNumber",
+                    "timeZone"
+                ],
+                "type": "object",
+                "properties": {
+                    "organizationId": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "milaPhoneNumber": {
+                        "type": "string"
+                    },
+                    "milaPhoneNumberTwilioSubAccountId": {
+                        "type": "string"
+                    },
+                    "inboundVoiceAgentPhoneNumbers": {
+                        "type": "object",
+                        "additionalProperties": {
+                            "$ref": "#/components/schemas/InboundVoiceAgentPhoneNumber"
+                        }
+                    },
+                    "timeZone": {
+                        "type": "string"
+                    },
+                    "organizationGroup": {
+                        "$ref": "#/components/schemas/OrganizationGroup"
+                    },
+                    "externalId": {
+                        "type": "string"
+                    }
+                }
+            },
+            "OrganizationGroup": {
+                "required": [
+                    "address",
+                    "adminGroup",
+                    "assistantName",
+                    "milaPhoneNumber",
+                    "milaPhoneNumberTwilioSubAccountId",
+                    "name",
+                    "organizationGroupId",
+                    "phoneNumber"
+                ],
+                "type": "object",
+                "properties": {
+                    "organizationGroupId": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "assistantName": {
+                        "type": "string"
+                    },
+                    "address": {
+                        "type": "string"
+                    },
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "milaPhoneNumber": {
+                        "type": "string"
+                    },
+                    "milaPhoneNumberTwilioSubAccountId": {
+                        "type": "string"
+                    },
+                    "adminGroup": {
+                        "$ref": "#/components/schemas/AdminGroup"
+                    },
+                    "externalId": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Provider": {
+                "required": [
+                    "emailId",
+                    "name",
+                    "organization",
+                    "providerId"
+                ],
+                "type": "object",
+                "properties": {
+                    "providerId": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "specialization": {
+                        "type": "string"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "emailId": {
+                        "type": "string"
+                    },
+                    "organization": {
+                        "$ref": "#/components/schemas/Organization"
+                    },
+                    "externalId": {
+                        "type": "string"
+                    },
+                    "summary": {
+                        "type": "string"
+                    }
+                }
+            },
+            "Constraint": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "ALLERGIES",
+                            "COMORBIDITY",
+                            "INTOLERANCE"
+                        ]
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "active": {
+                        "type": "boolean"
+                    },
+                    "severity": {
+                        "type": "string"
+                    }
+                }
+            },
+            "CreateCaseRequest": {
+                "required": [
+                    "communicationChannel",
+                    "name",
+                    "outcomePlanId",
+                    "providerId",
+                    "state"
+                ],
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "outcomePlanId": {
+                        "$ref": "#/components/schemas/VersionedIdOutcomePlanId"
+                    },
+                    "providerId": {
+                        "type": "string"
+                    },
+                    "patientId": {
+                        "type": "string"
+                    },
+                    "patient": {
+                        "$ref": "#/components/schemas/CreatePatientRequest"
+                    },
+                    "state": {
+                        "type": "string",
+                        "enum": [
+                            "ACTIVE",
+                            "DRAFT"
+                        ]
+                    },
+                    "communicationChannel": {
+                        "type": "string",
+                        "enum": [
+                            "VOICE",
+                            "SMS",
+                            "CHAT"
+                        ]
+                    },
+                    "preferredLanguage": {
+                        "type": "string"
+                    },
+                    "searchText": {
+                        "type": "string"
+                    },
+                    "icdCodes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "cptCodes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "appointments": {
+                        "type": "array",
+                        "items": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/components/schemas/BaseAppointmentObjectObject"
+                                }
+                            ],
+                            "oneOf": [
+                                {
+                                    "$ref": "#/components/schemas/AnnualPhysicalAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/ChronicDiseaseManagementAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/ColonoscopyAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DentalAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DiagnosticScreeningAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DischargeFollowUpAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/KetamineInfusionAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/LabWorkAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/MentalHealthAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/PcpFollowUpAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/PediatricAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/PhysicalTherapyAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/PreventiveCareAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/PrimaryCareAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/ProcedureAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/SpecialistAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/SurgeryAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/TelehealthAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/TherapyRehabilitationAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/WomensHealthAppointment"
+                                }
+                            ]
+                        }
+                    },
+                    "medications": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Medication"
+                        }
+                    }
+                }
+            },
+            "CreatePatientRequest": {
+                "required": [
+                    "firstName",
+                    "lastName",
+                    "organizationGroupId",
+                    "organizationId"
+                ],
+                "type": "object",
+                "properties": {
+                    "organizationId": {
+                        "type": "string"
+                    },
+                    "firstName": {
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "type": "string"
+                    },
+                    "mrn": {
+                        "type": "string"
+                    },
+                    "umrn": {
+                        "type": "string"
+                    },
+                    "entraId": {
+                        "type": "string"
+                    },
+                    "source": {
+                        "type": "string",
+                        "enum": [
+                            "DASHBOARD",
+                            "EHR",
+                            "THIRD_PARTY"
+                        ]
+                    },
+                    "dob": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "gender": {
+                        "type": "string",
+                        "enum": [
+                            "MALE",
+                            "FEMALE",
+                            "NON_BINARY",
+                            "OTHER",
+                            "PREFER_NOT_TO_SAY"
+                        ]
+                    },
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "mobilePhoneNumber": {
+                        "type": "string"
+                    },
+                    "pronoun": {
+                        "type": "string"
+                    },
+                    "conversationStyle": {
+                        "type": "string"
+                    },
+                    "communicationChannel": {
+                        "type": "string",
+                        "enum": [
+                            "VOICE",
+                            "SMS",
+                            "CHAT"
+                        ]
+                    },
+                    "postalCode": {
+                        "type": "string"
+                    },
+                    "constraintList": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Constraint"
+                        }
+                    },
+                    "state": {
+                        "type": "string"
+                    },
+                    "organizationGroupId": {
+                        "type": "string"
+                    }
+                }
+            },
+            "VersionedIdOutcomePlanId": {
+                "required": [
+                    "id",
+                    "versionNumber"
+                ],
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "versionNumber": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                }
+            },
+            "CreateCaseResponse": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    }
+                }
+            },
+            "CaseResponse": {
+                "required": [
+                    "caseId",
+                    "communicationChannel",
+                    "createdAt",
+                    "createdBy",
+                    "endDate",
+                    "name",
+                    "organizationGroupId",
+                    "outcomePlanId",
+                    "preferredLanguage",
+                    "patient",
+                    "provider",
+                    "searchText",
+                    "startDate",
+                    "state",
+                    "updatedAt",
+                    "updatedBy"
+                ],
+                "type": "object",
+                "properties": {
+                    "caseId": {
+                        "type": "string"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "organizationGroupId": {
+                        "type": "string"
+                    },
+                    "patient": {
+                        "$ref": "#/components/schemas/Patient"
+                    },
+                    "provider": {
+                        "$ref": "#/components/schemas/Provider"
+                    },
+                    "outcomePlanId": {
+                        "$ref": "#/components/schemas/VersionedIdOutcomePlanId"
+                    },
+                    "outcomePlanInstanceId": {
+                        "type": "string"
+                    },
+                    "startDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "endDate": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "icdCodes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "cptCodes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "appointmentId": {
+                        "type": "string"
+                    },
+                    "appointments": {
+                        "type": "array",
+                        "items": {
+                            "allOf": [
+                                {
+                                    "$ref": "#/components/schemas/BaseAppointmentObjectObject"
+                                }
+                            ],
+                            "oneOf": [
+                                {
+                                    "$ref": "#/components/schemas/AnnualPhysicalAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/ChronicDiseaseManagementAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/ColonoscopyAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DentalAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DiagnosticScreeningAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/DischargeFollowUpAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/KetamineInfusionAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/LabWorkAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/MentalHealthAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/PcpFollowUpAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/PediatricAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/PhysicalTherapyAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/PreventiveCareAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/PrimaryCareAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/ProcedureAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/SpecialistAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/SurgeryAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/TelehealthAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/TherapyRehabilitationAppointment"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/WomensHealthAppointment"
+                                }
+                            ]
+                        }
+                    },
+                    "medications": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Medication"
+                        }
+                    },
+                    "state": {
+                        "type": "string",
+                        "enum": [
+                            "ACTIVE",
+                            "MODERATE",
+                            "CRITICAL",
+                            "OUTCOME_ACHIEVED",
+                            "COMPLETED",
+                            "CANCELED",
+                            "DRAFT",
+                            "CLOSED"
+                        ]
+                    },
+                    "preferredLanguage": {
+                        "type": "string"
+                    },
+                    "communicationChannel": {
+                        "type": "string",
+                        "enum": [
+                            "VOICE",
+                            "SMS",
+                            "CHAT"
+                        ]
+                    },
+                    "escalations": {
+                        "type": "array",
+                        "items": {
+                            "oneOf": [
+                                {
+                                    "$ref": "#/components/schemas/AppointmentEscalation"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/GenericEscalation"
+                                },
+                                {
+                                    "$ref": "#/components/schemas/MedicationEscalation"
+                                }
+                            ]
+                        }
+                    },
+                    "searchText": {
+                        "type": "string"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "createdBy": {
+                        "type": "string"
+                    },
+                    "updatedBy": {
+                        "type": "string"
+                    }
+                }
+            },
+            "GetCasesResponse": {
+                "type": "object",
+                "properties": {
+                    "cases": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/CaseResponse"
+                        }
+                    },
+                    "totalCount": {
+                        "type": "integer",
+                        "format": "int64"
+                    },
+                    "offset": {
+                        "type": "integer",
+                        "format": "int32"
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "format": "int32"
+                    }
+                }
+            },
+            "Patient": {
+                "type": "object",
+                "properties": {
+                    "patientId": {
+                        "type": "string"
+                    },
+                    "organizationGroupId": {
+                        "type": "string"
+                    },
+                    "organizationId": {
+                        "type": "string"
+                    },
+                    "firstName": {
+                        "type": "string"
+                    },
+                    "lastName": {
+                        "type": "string"
+                    },
+                    "mrn": {
+                        "type": "string"
+                    },
+                    "umrn": {
+                        "type": "string"
+                    },
+                    "source": {
+                        "type": "string",
+                        "enum": [
+                            "DASHBOARD",
+                            "EHR",
+                            "THIRD_PARTY"
+                        ]
+                    },
+                    "dob": {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "gender": {
+                        "type": "string",
+                        "enum": [
+                            "MALE",
+                            "FEMALE",
+                            "NON_BINARY",
+                            "OTHER",
+                            "PREFER_NOT_TO_SAY"
+                        ]
+                    },
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "mobilePhoneNumber": {
+                        "type": "string"
+                    },
+                    "pronoun": {
+                        "type": "string",
+                        "enum": [
+                            "He/Him",
+                            "She/Her",
+                            "They/Them",
+                            "Ze/Zir",
+                            "Xe/Xem",
+                            "Ey/Em",
+                            "Per/Per",
+                            "Ve/Ver",
+                            "Other"
+                        ]
+                    },
+                    "conversationStyle": {
+                        "type": "string"
+                    },
+                    "communicationChannel": {
+                        "type": "string",
+                        "enum": [
+                            "VOICE",
+                            "SMS",
+                            "CHAT"
+                        ]
+                    },
+                    "postalCode": {
+                        "type": "string"
+                    },
+                    "constraintList": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Constraint"
+                        }
+                    }
+                }
+            },
+            "InboundVoiceAgentPhoneNumber": {
+                "required": [
+                    "outcomePlanType",
+                    "phoneNumber",
+                    "twilioSubAccountId"
+                ],
+                "type": "object",
+                "properties": {
+                    "phoneNumber": {
+                        "type": "string"
+                    },
+                    "twilioSubAccountId": {
+                        "type": "string"
+                    },
+                    "outcomePlanType": {
+                        "type": "string",
+                        "enum": [
+                            "CHRONIC_CARE_MANAGEMENT",
+                            "PATIENT_FOLLOW_UP_APPOINTMENT_CANCELLATION",
+                            "PATIENT_FOLLOW_UP_APPOINTMENT_CONFIRMATION",
+                            "PATIENT_FOLLOW_UP_APPOINTMENT_SCHEDULING",
+                            "PATIENT_FOLLOW_UP_APPOINTMENT_RESCHEDULING",
+                            "PATIENT_FOLLOW_UP_APPOINTMENT_MANAGEMENT",
+                            "PATIENT_FOLLOW_UP_DATA_COLLECTION",
+                            "PATIENT_FOLLOW_UP_PAYMENT_COLLECTION",
+                            "PATIENT_OUTREACH_APPOINTMENT_SCHEDULING_REQUEST",
+                            "PATIENT_OUTREACH_COLONOSCOPY",
+                            "PATIENT_OUTREACH_TREATMENT_PLAN",
+                            "PATIENT_INQUIRY_APPOINTMENT_MANAGEMENT",
+                            "POST_PROCEDURE_FOLLOW_UP_COLONOSCOPY",
+                            "PREVENTIVE_CARE",
+                            "PROCEDURE_PREPARATION_COLONOSCOPY"
+                        ]
+                    },
+                    "outcomePlanId": {
+                        "$ref": "#/components/schemas/VersionedIdOutcomePlanId"
+                    }
+                }
+            },
+            "Interaction": {
+                "type": "object",
+                "properties": {
+                    "interactionId": {
+                        "type": "string"
+                    },
+                    "communicationChannel": {
+                        "type": "string",
+                        "enum": [
+                            "VOICE",
+                            "SMS",
+                            "CHAT"
+                        ]
+                    },
+                    "startTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "endTime": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "status": {
+                        "type": "string",
+                        "enum": [
+                            "NOT_STARTED",
+                            "IN_PROGRESS",
+                            "PENDING_RETRY",
+                            "COMPLETED",
+                            "FAILED",
+                            "TERMINATED",
+                            "SKIPPED",
+                            "CANCELED"
+                        ]
+                    },
+                    "messages": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/MessageLog"
+                        }
+                    }
+                }
+            },
+            "InteractionListResponse": {
+                "type": "object",
+                "properties": {
+                    "interactions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/Interaction"
+                        }
+                    }
+                }
+            },
+            "MessageLog": {
+                "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string"
+                    },
+                    "timestamp": {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    "sender": {
+                        "type": "string",
+                        "enum": [
+                            "PATIENT",
+                            "SYSTEM",
+                            "PROVIDER"
+                        ]
+                    }
+                }
+            },
+            "UpdateCaseRequest": {
+                "type": "object",
+                "properties": {
+                    "state": {
+                        "type": "string",
+                        "enum": [
+                            "COMPLETED",
+                            "CANCELED",
+                            "CLOSED"
+                        ]
+                    }
+                }
+            }
+        }
+    }
+}
