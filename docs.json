@@ -84,6 +84,13 @@
                 ]
             },
             {
+                "group": "Org Structure: Telephony",
+                "pages": [
+                    "api-documentation/telephony/add-twilio-subaccount",
+                    "api-documentation/telephony/update-twilio-subaccount"
+                ]
+            },
+            {
                 "group": "Org Structure: Provider",
                 "pages": [
                     "api-documentation/provider/create-provider",
